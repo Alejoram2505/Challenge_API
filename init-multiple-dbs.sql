@@ -1,2 +1,0 @@
-CREATE DATABASE mock_db;
-CREATE DATABASE mock_db_test;

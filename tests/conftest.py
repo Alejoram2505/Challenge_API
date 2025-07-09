@@ -1,14 +1,19 @@
 import pytest
 from app.main import create_app, db
-from app.test_config import TestConfig
+from flask import Flask
+
+class SQLiteTestConfig:
+    TESTING = True
+    SQLALCHEMY_DATABASE_URI = "sqlite:///:memory:"
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 @pytest.fixture(scope="session")
 def app():
-    app = create_app(TestConfig)
-
+    app = create_app(SQLiteTestConfig)
     with app.app_context():
         db.create_all()
         yield app
+        db.session.remove()
         db.drop_all()
 
 @pytest.fixture(scope="function")

@@ -6,12 +6,15 @@ import os
 # Inicializar SQLAlchemy
 db = SQLAlchemy()
 
-def create_app():
+def create_app(config_object=None):
     app = Flask(__name__)
 
     # Configuración de la base de datos
-    app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
-    app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+    if config_object:
+        app.config.from_object(config_object)
+    else:
+        app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
+        app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
     # Inicializar extensiones
     Swagger(app, template={
