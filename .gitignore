@@ -1,0 +1,74 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.*
+
+# Pytest cache
+.pytest_cache/
+.cache/
+
+# VSCode or IDE configs
+.vscode/
+.idea/
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+
+# Flask instance folder
+instance/
+
+# SQLite (if used for local dev/testing)
+*.sqlite3
+
+# MacOS
+.DS_Store
+
+# Docker
+*.pid
+*.pid.lock
+
+# Alembic
+migrations/versions/*.pyc
+migrations/versions/__pycache__/
+!migrations/versions/.gitkeep
+
+# Compiled files
+*.so
+
+# Coverage
+.coverage
+htmlcov/
+coverage.xml
+
+# Test output
+junit-*.xml
+test-results/
+
+# Database files
+*.db
+*.sql
+
+# Editor swap/backup files
+*~
+*.swp
+*.bak
+
+# pgAdmin workspace
+.pgadmin/
+
+# Local dev db volume 
+pgdata/
+
+# Frontend static files if generated
+dist/
+build/
