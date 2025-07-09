@@ -37,7 +37,7 @@ docker-compose up --build
 4. Accede a la app:
 
 - UI: [http://localhost:5000](http://localhost:5000)
-- Swagger: [http://localhost:5000/apidocs](http://localhost:5000/apidocs)
+- Swagger(Documentación y curls): [http://localhost:5000/apidocs](http://localhost:5000/apidocs)
 - pgAdmin: [http://localhost:8080](http://localhost:8080)
 
 5. Entramos al pgAdmin con el usuario y contraseña
@@ -57,7 +57,7 @@ docker-compose up --build
     docker exec -it mock_api alembic upgrade head 
     ```
 
-8. Listo ya pueden ver el funcionamiento del Mock API 
+8. Listo ya pueden ver el funcionamiento del Mock API
 
 ## 🧪 Pruebas
 
