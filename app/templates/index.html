@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mock Service</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Mock API Config</h1>
+        <div class="tabs">
+            <button id="btn-simple" class="active">Formulario Simple</button>
+            <button id="btn-advanced">Formulario Avanzado</button>
+        </div>
+
+        <div class="card">
+            <!-- Formulario simple -->
+            <form id="simple-form">
+                <h2>Formulario Simple</h2>
+                <label>Mensaje de respuesta:</label>
+                <input type="text" id="mensaje" required>
+                <label>Retardo (ms):</label>
+                <input type="number" id="delay_ms" min="0" value="0">
+                <button type="submit">Guardar Mock</button>
+                <button type="button" id="auto-generate">Mock Automático</button>
+            </form>
+
+            <!-- Formulario avanzado -->
+            <form id="advanced-form" style="display: none;">
+                <h2>Formulario Avanzado</h2>
+                <label>Path:</label>
+                <input type="text" id="adv_path" placeholder="/api/v1/ejemplo" required>
+                <label>Método HTTP:</label>
+                <select id="adv_method">
+                    <option>GET</option>
+                    <option>POST</option>
+                    <option>PUT</option>
+                    <option>DELETE</option>
+                </select>
+                <label>Query Params (JSON):</label>
+                <textarea id="adv_query_params" rows="2" placeholder='{"usuario": "admin"}'></textarea>
+                <label>Body Params (JSON):</label>
+                <textarea id="adv_body_params" rows="2"></textarea>
+                <label>Headers (JSON):</label>
+                <textarea id="adv_headers" rows="2"></textarea>
+                <label>Status:</label>
+                <input type="number" id="adv_status" value="200">
+                <label>Body de Respuesta (JSON):</label>
+                <textarea id="adv_response_body" rows="3" placeholder='{"mensaje": "Hola mundo"}'></textarea>
+                <label>Content-Type:</label>
+                <input type="text" id="adv_content_type" value="application/json">
+                <label>Retardo (ms):</label>
+                <input type="number" id="adv_delay_ms" min="0" value="0">
+                <button type="submit">Guardar Mock</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Info Básica Mocks Registrados</h2>
+            <div id="mock-list"></div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
