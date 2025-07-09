@@ -52,7 +52,7 @@ docker-compose up --build
         - Pass: mock_pass 
         - le dan en save passsword
 
-7. Luego en consola dentro de Challenge_API cargarn las migraciones
+7. Luego si no les cargan las tablas en la bd, en consola dentro de Challenge_API recargan las migraciones con el siguiente comando
     ```bash
     docker exec -it mock_api alembic upgrade head 
     ```
