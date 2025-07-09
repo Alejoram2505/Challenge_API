@@ -56,7 +56,6 @@ test-results/
 
 # Database files
 *.db
-*.sql
 
 # Editor swap/backup files
 *~
