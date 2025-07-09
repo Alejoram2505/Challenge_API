@@ -40,6 +40,25 @@ docker-compose up --build
 - Swagger: [http://localhost:5000/apidocs](http://localhost:5000/apidocs)
 - pgAdmin: [http://localhost:8080](http://localhost:8080)
 
+5. Entramos al pgAdmin con el usuario y contraseña
+    - User: admin@mock.com
+    - Password: admin123
+
+6. Crean un nuevo serverver con la siguiente info
+    - Name: db
+    - En Connection:
+        - Host Name: db
+        - User: mock_user
+        - Pass: mock_pass 
+        - le dan en save passsword
+
+7. Luego en consola dentro de Challenge_API cargarn las migraciones
+    ```bash
+    docker exec -it mock_api alembic upgrade head 
+    ```
+
+8. Listo ya pueden ver el funcionamiento del Mock API 
+
 ## 🧪 Pruebas
 
 Para ejecutar los tests:
